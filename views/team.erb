@@ -5,10 +5,14 @@
   <title>Basketball Team</title>
  </head>
  <body>
- 
-
-
+   <%
+      label = {"name"=> "Team Name", "coach"=> "Coach", "pg"=> "Point Guard", "sg"=> "Shooting Guard", "sf"=> "Small Forward", "pf"=> "Power Forward", "c"=> "Center"}
+      @params.each do |k, v|
+        if k=="name" %>
+          <p><h1><%= "#{label[k]}: #{v}" %></h1></p>
+         <% elsif v != "" %>
+          <p><h2><%= "#{label[k]}: #{v}" %></h2></p>
+        <% end
+      end %>
  </body>
 </html>
-
-
